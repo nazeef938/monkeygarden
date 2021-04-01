@@ -1,0 +1,25 @@
+def monkey(array):
+    Path=0
+    tPath=0
+    distance=0
+    for i in range(0,len(array)):
+        for j in range(0,i):
+            if(len(array)-i+j)<(i-j):
+                distance=(len(array)-i+j)
+            else:
+                distance=(i-j)
+            tPath=array[i]+array[j]+distance
+            print("Distance Between trees at",i,"and",j,":",distance)
+            print("->> tPath:",tPath)
+            if(tPath>Path):
+                Path=tPath
+            else:
+                Path=Path;
+
+
+array=[]
+n=int(input("Enter the size of the array="))
+for i in range(0,n):
+    ele=int(input())
+    array.append(ele)
+print(monkey(array))
